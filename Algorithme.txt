@@ -1,0 +1,29 @@
+ALGORITHM checkpoint
+VAR
+lenSentence : INTEGER;
+nbrWords : INTEGER;
+nbrVowels: INTEGER;
+str: STRING;
+vowels : ARRAY_OF CHAR [6];
+BEGIN
+     read(str);
+    //initialisation
+    str := str.toLowerCase();
+    vowels:=['a','o','i','y','u','e'];
+    lenSentence:=0;
+    nbrWords:=0;
+    nbrVowels:=0;
+    // instructions 
+    FOR i FROM 0 TO (str.length-1) STEP 1  DO
+        lenSentence++;
+        if(str[i] = " "){
+            nbrWords++;
+        }
+        FOR j FROM 0 TO 5 STEP 1  DO
+           if(vowels[j] = str[i]){
+               nbrVowels++;
+           }
+        END_FOR
+        
+    END_FOR
+END
